@@ -1,0 +1,64 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+:root{
+    --fonte1: verdana, geneva, tahoma, sans-serif;
+    --fonte2: "Passion One", sans-serif;
+    --fonte3: "Sriracha", cursive;
+    --cor01:  rgb(27, 26, 26);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html, body{
+    min-height: 100vh;
+    background-color: darkgray;
+    font-family: var(--fonte1);
+}
+header{
+    background-color: var(--cor01);
+    color: white;
+    text-align: center;
+}
+header > h1{
+    padding-top: 50px;
+    font-variant: small-caps;
+    font-family: var(--fonte2);
+    font-size: 10vw;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+header a:hover{
+    background-image: linear-gradient(to top,rgb(184, 179, 179),var(--cor01));
+    color: var(--cor01);
+}
+body{
+    background: black url(../imagens/oceano-atlantico.png) no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+main form{
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.664);
+    font-family: var(--fonte3);
+}
+fieldset{
+    padding: 5px;
+}
+footer{
+    background-color: var(--cor01);
+    height: 150px;
+    width: 100vw;
+    
+}

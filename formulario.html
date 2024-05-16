@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cordel moderno</title>
+    <link rel="shortcut icon" href="imagens/2622150.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/style03.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+        <header>
+            <section>
+                <h1>titulo</h1>
+                <img src="imagens/2622150.png" alt="icone">
+            </section>
+            <section>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <a href="formulario.html">Formulario</a>
+                </nav>
+            </section>
+        </header>
+
+    <main>
+        <section>
+            <form action="">
+                <fieldset>
+                    <legend>formulario</legend>
+                   
+                        <fieldset>
+                            <p><label for="inome">Nome:</label><input type="text" id="inome" required></p>
+                            <p><label for="iemail">E-mail:</label><input type="email" name="eml" id="iemail" required></p>
+                            <p><label for="isenha">Senha</label><input type="password" name="senha" id="isenha" required></p>
+                        </fieldset>
+                    
+                        <p><label for="idata">Data</label><input type="datetime-local" name="data" id="idata"></p>
+                        <p><label for="iidade">Idade:</label><input type="number" name="idade" id="iidade"></p>
+                        <p><label for="iano">em que ano vc nasceu? </label><input type="number" name="ano" id="iano" min="1900" max="2024" oninput="calcIdade()"></p>
+                        <p><label for="iidade">sua idade é:</label><output id="iidade">0</output></p>
+                        <p>
+                            <input type="radio" name="sexo" id="imas" value="m" checked><label for="imas">masculino</label>
+                            <input type="radio" name="sexo" id="ifem" value="f"><label for="ifem">feminino</label>
+                        </p>
+                        <p><input type="button" value="Enviar"></p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="carrossel">
+            <div class="container" id="img">
+                <img src="imagens/dia-oceano-1.bx_.jpg" alt="">
+                <img src="imagens/tubarao-branco.webp" alt="">
+                <img src="imagens/oceano_327.jpg" alt="">
+                <img src="imagens/tubarao-limao.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+    <script>
+        function calcIdade(){
+            let atual = new Date().getFullYear()
+            iidade.innerHTML = Number(atual) - Number(iano.value)
+        }
+    </script>
+</body>
+</html>
