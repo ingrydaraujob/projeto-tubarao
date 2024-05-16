@@ -34,7 +34,7 @@ header a{
     font-weight: bolder;
 }
 header a:hover{
-    background-image: linear-gradient(to top,rgb(184, 179, 179),var(--cor01));
+    background-image: linear-gradient(to top,rgb(184, 179, 179),transparent);
     color: var(--cor01);
 }
 body{

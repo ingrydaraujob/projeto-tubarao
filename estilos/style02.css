@@ -34,7 +34,7 @@ header a{
     font-weight: bolder;
 }
 header a:hover{
-    background-image: linear-gradient(to top,rgb(184, 179, 179),var(--cor01));
+    background-image: linear-gradient(to top,rgb(184, 179, 179),transparent);
     color: var(--cor01);
 }
 main{
@@ -44,6 +44,7 @@ main{
     align-items: center;
     justify-content: center;
     padding: 2%;
+    overflow: hidden;
     
 }
 main section{
@@ -51,6 +52,7 @@ main section{
     height: 90vh;
     display: flex;
     align-items: center;
+    
 }
 main div{
     position: relative;
@@ -78,3 +80,4 @@ footer{
     width: 100vw;
     
 }
+
