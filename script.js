@@ -1,59 +1,58 @@
-const imgs = document.getElementById("img");
-const img = document.querySelectorAll("#img img");
-
-let idx = 0;
-
-function carrossel(){
-   idx++;
-   if(idx > img.length - 1){
-        idx=0;
-   }
-   imgs.style.transform = `translateX(${-idx*500}px)`
-}
-setInterval(carrossel,1800);
 
 function calcIdade(){
    let atual = new Date().getFullYear()
    iidade.innerHTML = Number(atual) - Number(iano.value)
 }
+const form = document.getElementById("form")
+const nome = document.getElementById("inome")
+const email = document.getElementById("iemail")
+const senha = document.getElementById("isenha")
+const emailrgx = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-const form = document.querySelector("#form")
-const name = document.querySelector("#inome")
-const email = document.querySelector("#iemail")
-const senha = document.querySelector("#isenha")
 
-form.addEventListener("submit", (event) =>{
-   event.preventDefault()
-   if(nome.value == ""){
-      alert("por favor preencha o seu nome")
-      return
-   }
-   if(email.value == "" || !isEmailValid(email.value)){
-      alert("por favor, preencha o seu email")
-      return
-   }
-   if(!validaSenha(senha.value,4)){
-      alert("digite a senha com no minimo 4 characteres")
-      return
-   }
-
-   form.submit()
+form.addEventListener("submit",(event)=>{
+   event.preventDefault();
+   verificaUsuario()
+   verificaEmail()
+   verificaSenha()
 })
 
-function isEmailValid(email){
-   const emailrgx = new RegExp(
-      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/
-   )
-   if(emailrgx.test(email)){
-      return true
+function verificaUsuario(){
+   
+   if(nome.value === ""){
+      erroInput(nome,"preencha o nome de usuario","form-content erro")
    }else{
-      return false
+      erroInput(nome,"","form-content ok")
+      
    }
+
 }
-function validaSenha(senha, minDigitos){
-   if(senha.length >= minDigitos){
-      return true
+
+function verificaEmail(){
+   
+   if(emailrgx.test(email.value)){
+      erroInput(email,"preencha o email","form-content erro")
    }else{
-      return false
+      erroInput(email,"","form-content ok")
+      
    }
+
+}
+function verificaSenha(){
+   const senhavalor =senha.value
+   if(senhavalor.length > 4){
+      erroInput(email,"preencha o email","form-content erro")
+   }else{
+      erroInput(email,"","form-content ok")
+      
+   }
+
+}
+
+function erroInput(input,msg,classname){
+   const formItem = input.parentElement
+   const textmsg = formItem.querySelector("output")
+   textmsg.innerText = msg
+   formItem.className = classname
+   
 }
