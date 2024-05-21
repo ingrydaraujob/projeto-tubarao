@@ -11,6 +11,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 html, body{
     min-height: 100vh;
@@ -44,7 +45,7 @@ body{
 }
 main form{
     width: 400px;
-    height: 350px;
+    height: 530px;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -55,6 +56,37 @@ main form{
 }
 fieldset{
     padding: 5px;
+}
+.form-content input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid rgb(173, 173, 173);
+}
+.form-content output{
+    
+    visibility: hidden;
+} 
+#button{
+    background-color: rgb(137, 43, 226);
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+.form-content.erro input{
+    border-color: red;
+}
+.form-content.erro output{
+    color: red;
+    visibility: visible;
+}
+.form-content.ok input{
+    border-color: aqua;
+}
+.form-content.ok output{
+    visibility: hidden;
 }
 footer{
     background-color: var(--cor01);

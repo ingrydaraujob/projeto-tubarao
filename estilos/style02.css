@@ -11,6 +11,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 html, body{
     min-height: 100vh;
@@ -40,11 +41,9 @@ header a:hover{
 main{
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 2%;
-    overflow: hidden;
+    overflow: auto;
+    
     
 }
 main section{
@@ -52,18 +51,37 @@ main section{
     height: 90vh;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     
 }
-main div{
+.card{
     position: relative;
     width: 20%;
     height: 100%;
     margin: 0px 5px;
     transition: width 1s;
 }
-main div:hover{
+.card:hover{
+    width: 30%;
+    .info{
+        display: block;
+    }
+}
+.info{
+    display: none;
+    position: absolute;
     width: 100%;
-   
+    padding: 16% 8%;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.74) 65%, transparent);
+    color: white;
+    transition: display 0.5;
+
+}
+.info h2{
+    color: gold;
 }
 main>section>div> img{
     height: 100%;
@@ -71,13 +89,37 @@ main>section>div> img{
     object-fit: cover;
    
 }
-main > section > div > img:hover{
-    
-}
 footer{
     background-color: var(--cor01);
     height: 150px;
     width: 100vw;
     
+}
+@media screen and (max-width: 768px) {
+    main section{
+        width: 100%;
+        height: 90vh;
+        display: contents;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        
+    }
+    .card{
+        position: relative;
+        width: 60%;
+        height: 100%;
+        margin: 0px 5px;
+        padding-bottom: 10px;
+        transition: width 1s;
+    }
+    .card:hover{
+        width: 90%;
+        .info{
+            display: block;
+        }
+    }
+
 }
 

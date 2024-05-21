@@ -25,44 +25,28 @@
 
     <main>
         <section>
-            <form action="">
+            <form action="" id="form">
                 <fieldset>
                     <legend>formulario</legend>
                    
                         <fieldset>
-                            <p><label for="inome">Nome:</label><input type="text" id="inome" required></p>
-                            <p><label for="iemail">E-mail:</label><input type="email" name="eml" id="iemail" required></p>
-                            <p><label for="isenha">Senha</label><input type="password" name="senha" id="isenha" required></p>
+                            <p class="form-content"><label for="inome">Nome:</label><input type="text" id="inome" placeholder="digite seu nome..."><br><output id="erronome">erro...</output></p>
+                            <p class="form-content"><label for="iemail">E-mail:</label><input type="email" name="eml" id="iemail" placeholder="digite seu email..."><br><output id="erroemail">erro...</output></p>
+                            <p class="form-content"><label for="isenha">Senha</label><input type="password" name="senha" id="isenha"><br><output id="errosenha">erro...</output></p>
                         </fieldset>
                     
                         <p><label for="idata">Data</label><input type="datetime-local" name="data" id="idata"></p>
-                        <p><label for="iidade">Idade:</label><input type="number" name="idade" id="iidade"></p>
                         <p><label for="iano">em que ano vc nasceu? </label><input type="number" name="ano" id="iano" min="1900" max="2024" oninput="calcIdade()"></p>
                         <p><label for="iidade">sua idade é:</label><output id="iidade">0</output></p>
-                        <p>
-                            <input type="radio" name="sexo" id="imas" value="m" checked><label for="imas">masculino</label>
-                            <input type="radio" name="sexo" id="ifem" value="f"><label for="ifem">feminino</label>
-                        </p>
-                        <p><input type="button" value="Enviar"></p>
+                        
+                        <p><input type="submit" value="enviar" id="button"></p>
                 </fieldset>
             </form>
         </section>
     </main>
     <footer>
-        <div class="carrossel">
-            <div class="container" id="img">
-                <img src="imagens/dia-oceano-1.bx_.jpg" alt="">
-                <img src="imagens/tubarao-branco.webp" alt="">
-                <img src="imagens/oceano_327.jpg" alt="">
-                <img src="imagens/tubarao-limao.jpg" alt="">
-            </div>
-        </div>
+       
     </footer>
-    <script>
-        function calcIdade(){
-            let atual = new Date().getFullYear()
-            iidade.innerHTML = Number(atual) - Number(iano.value)
-        }
-    </script>
+    
 </body>
 </html>
