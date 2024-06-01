@@ -1,7 +1,7 @@
 
 function calcIdade(){
-   let atual = new Date().getFullYear()
-   iidade.innerHTML = Number(atual) - Number(iano.value)
+   let atual = new Date().getFullYear();
+   iidade.innerHTML = Number(atual) - Number(iano.value);
 }
 const form = document.getElementById("form");
 const nome = document.getElementById("inome");
@@ -50,9 +50,13 @@ function verificaSenha(){
 }
 
 function erroInput(input,msg,classname){
-   const formItem = input.parentElement
-   const textmsg = formItem.querySelector("output")
-   textmsg.innerText = msg
-   formItem.className = classname
+   const formItem = input.parentElement;
+   const textmsg = formItem.querySelector("output");
+   textmsg.innerText = msg;
+   formItem.className = classname;
    
+}
+
+function mudaTela(){
+   document.body.classList.toggle("dark-mode");
 }
